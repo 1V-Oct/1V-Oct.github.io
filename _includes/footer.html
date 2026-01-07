@@ -11,21 +11,25 @@
                 </div>
 
                 <!-- Column 2: Explore -->
-                <div class="text-sm">
-                    <h4 class="font-bold uppercase tracking-widest text-white/90 mb-4">Explore</h4>
+                <div class="text-sm col-span-2 md:col-span-1">
+                    <h4 class="font-bold uppercase tracking-widest text-white/90 mb-4">Products</h4>
                     <ul class="space-y-3">
-                        <li><a href="/journal/" class="hover:text-white transition-colors">Journal</a></li>
-                        <li><a href="https://1voct.com/product/the-centre/" target="_blank" class="hover:text-white transition-colors">The CENTRE</a></li>
-                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        {% for product_pair in site.data.products %}
+                            {% assign product_key = product_pair[0] %}
+                            {% assign product = product_pair[1] %}
+                            <li><a href="/product/{{ product_key }}/" class="hover:text-white transition-colors">{{ product.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
 
                 <!-- Column 3: Connect -->
                 <div class="text-sm">
-                    <h4 class="font-bold uppercase tracking-widest text-white/90 mb-4">Connect</h4>
+                    <h4 class="font-bold uppercase tracking-widest text-white/90 mb-4">Explore</h4>
                     <ul class="space-y-3">
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="/journal/" class="hover:text-white transition-colors">Journal</a></li>
                         <li><a href="/support/" class="hover:text-white transition-colors">Support</a></li>
-                        <li><a href="https://github.com/1voct" target="_blank" class="hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="mailto:lfo@1voct.com" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
@@ -35,14 +39,43 @@
                     <ul class="space-y-3">
                         <li><a href="/terms-of-service/" class="hover:text-white transition-colors">Terms of Service</a></li>
                         <li><a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/cookie-policy/" class="hover:text-white transition-colors">Cookie Policy</a></li>
                         <li><a href="/terms-of-shipping/" class="hover:text-white transition-colors">Terms of Shipping</a></li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Social Media Links -->
+            <div class="border-t border-white/10 pt-8 mt-8 text-center">
+                <div class="flex justify-center items-center space-x-6">
+                    <!-- GitHub -->
+                    <a href="https://github.com/1voct" target="_blank">
+                        <img src="/assets/social_media/github.svg" alt="GitHub" class="social-icon">
+                    </a>
+                    <!-- Discord -->
+                    <a href="https://discord.gg/QUCTeY5gZv" target="_blank">
+                        <img src="/assets/social_media/discord.svg" alt="Discord" class="social-icon">
+                    </a>
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/channel/UC4XqE4s5_4-p5q_q5q5q5qQ" target="_blank">
+                        <img src="/assets/social_media/youtube.svg" alt="YouTube" class="social-icon">
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/1voct" target="_blank">
+                        <img src="/assets/social_media/facebook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/1voct" target="_blank">
+                        <img src="/assets/social_media/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@1voct" target="_blank">
+                        <img src="/assets/social_media/tiktok.svg" alt="TikTok" class="social-icon">
+                    </a>
+                </div>
+            </div>
+
             <!-- Copyright -->
-            <div class="border-t border-white/10 pt-8 text-center">
+            <div class="border-t border-white/10 pt-8 mt-12 text-center">
                 <p class="text-xs tracking-widest">Copyright © 2026 1V/OCT. All rights reserved.</p>
             </div>
         </div>

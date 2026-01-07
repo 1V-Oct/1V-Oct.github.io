@@ -11,7 +11,7 @@
       <!-- Text Column -->
       <div class="flex flex-col justify-between h-full py-0">
         <div>
-          <h1 class="font-eraz text-5xl md:text-7xl font-bold tracking-tight text-neon-green mt-8">{{ site.data.products[product_key].title }}</h1>
+          <h1 class="font-eraz text-5xl md:text-7xl font-bold tracking-tight text-neon-green mt-8">{{ site.data.products[product_key].title | uppercase }}</h1>
           <p class="mt-4 text-xl md:text-2xl text-white/80">{{ site.data.products[product_key].subtitle }}</p>
         </div>
         <div class="mb-2">
