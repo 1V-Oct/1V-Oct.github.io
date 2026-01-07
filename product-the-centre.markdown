@@ -277,7 +277,7 @@ permalink: /product/the-centre/
 <div id="support" class="bg-off-black text-white py-20 md:py-24 scroll-mt-20">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">Support & Downloads</h2>
+      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight text-neon-green">Support & Downloads</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <!-- Column 1: Firmware -->
