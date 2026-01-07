@@ -59,7 +59,7 @@ title: Home
 
 
 <!-- Section 2: White Background -->
-<div class="bg-white text-off-black py-20 md:py-32">
+<div class="bg-gray-100 text-off-black py-20 md:py-32">
   <div class="container mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-4xl md:text-6xl font-eraz font-bold tracking-tight">The Latest from the Lab</h2>

@@ -4,7 +4,7 @@ title: Privacy Policy
 permalink: /privacy-policy/
 ---
 
-<div class="bg-white text-off-black py-20 md:py-32">
+<div class="bg-gray-100 text-off-black py-20 md:py-32">
   <div class="container mx-auto px-6">
     <div class="max-w-3xl mx-auto prose lg:prose-lg prose-headings:font-eraz prose-headings:tracking-tight prose-a:text-neon-green hover:prose-a:text-green-700 prose-ul:pl-6 prose-li:marker:text-neon-green">
       <h1 class="text-4xl md:text-6xl font-eraz font-bold tracking-tight mb-8">Privacy Policy</h1>
