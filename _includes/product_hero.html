@@ -1,0 +1,83 @@
+<!-- Hero Section - Image and Description Section -->
+<div class="bg-blck text-white py-20 md:py-24">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <!-- Image Column -->
+      <div class="grid aspect-square max-w-lg mx-auto">
+        {% for image in site.data.products[product_key].images %}
+          <img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full h-full object-contain" style="grid-column: 1; grid-row: 1; {% if image.animated %}animation: fade-in-out 6s ease-in-out infinite;{% endif %}">
+        {% endfor %}
+      </div>
+      <!-- Text Column -->
+      <div class="flex flex-col justify-between h-full py-0">
+        <div>
+          <h1 class="font-eraz text-5xl md:text-7xl font-bold tracking-tight text-neon-green mt-8">{{ site.data.products[product_key].title }}</h1>
+          <p class="mt-4 text-xl md:text-2xl text-white/80">{{ site.data.products[product_key].subtitle }}</p>
+        </div>
+        <div class="mb-2">
+          <div class="flex justify-between items-end mb-4">
+            <!-- Left side: Colors -->
+            <div>
+              <h4 class="text-sm uppercase tracking-widest text-white/70 mb-2">Available colours</h4>
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                  <span class="block w-4 h-4 rounded-full bg-zinc-300 border border-gray-700"></span>
+                  <span class="text-sm text-white/90">SILVER</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="block w-4 h-4 rounded-full bg-black border border-gray-700"></span>
+                  <span class="text-sm text-white/90">BLACK</span>
+                </div>
+              </div>
+            </div>
+            <!-- Right side: Prices -->
+            <div class="text-right relative">
+              <div class="absolute -top-8 right-0 transform -rotate-12">
+                <div class="bg-red-600 text-white font-bold uppercase text-xs px-4 py-2 rounded-full shadow-lg shadow-red-500/50">
+                  {{ site.data.prices[product_key].promotion_type }} {{ site.data.prices[product_key].sale_discount }} OFF
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-widest text-white/70 pt-4">Current Price</p>
+              <p class="text-2xl font-bold text-white">{{ site.data.prices[product_key].current_price }}</p>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-2">MSRP</p>
+              <p class="text-2xl text-white/70 relative inline-block"><span class="block absolute w-full h-0.5 bg-neon-green top-1/2 -translate-y-1/2 -rotate-[10deg]"></span>{{ site.data.prices[product_key].msrp_price }}</p>
+            </div>
+          </div>
+          <a href="https://shop.1voct.com" target="_blank" class="bg-neon-green text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center block mt-6">
+            Visit the Shop
+          </a>
+          <p class="text-center text-xl text-white/50 mt-4">Looking for support? <a href="#support" class="text-white/70 hover:text-white underline">Find firmware and user manuals here.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-neutral-800 text-white/80 py-16 md:py-20 border-t border-white/10">
+    <div class="container mx-auto px-6 prose prose-invert lg:prose-lg prose-headings:font-eraz prose-strong:text-white bg-neutral-800">
+        <h2 class="!text-3xl !mt-0">{{ site.data.products[product_key].description.title  }}</h2>
+        <p>{{ site.data.products[product_key].description.body }}</p>
+    </div>
+</div>
+
+
+<!-- Key Features Section -->
+<div class="bg-off-black text-white py-20 md:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">Key Features</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style="grid-template-columns: repeat({{ site.data.products[product_key].key_features | size }}, minmax(0, 1fr));">
+      {% for feature_section in site.data.products[product_key].key_features %}
+        <div class="bg-white/5 rounded-2xl p-8">
+          <h3 class="font-eraz text-2xl mb-4">{{ feature_section.name }}</h3>
+          <ul class="space-y-2 text-white/70 list-disc pl-5">
+            {% for item in feature_section.items %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

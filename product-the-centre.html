@@ -1,0 +1,40 @@
+---
+layout: default
+title: The CENTRE - Polyphonic Modular Synthesiser
+permalink: /product/the-centre/
+---
+
+{% assign product_key = "the_centre" %}
+
+{% include product_hero.html product_key=product_key %}
+
+
+
+
+
+
+
+<!-- Supported Modules Section -->
+<div class="bg-gray-100 text-off-black py-20 md:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">Internal Modules</h2>
+      <p class="mt-4 text-lg text-gray-600">The "modular-in-modular" design allows you to build patches using a variety of internal virtual modules. Here are the key modules available:</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for module in site.data.modules.modules %}
+        <div class="bg-white rounded-2xl p-8 flex flex-col">
+          <h3 class="font-eraz text-2xl mb-2 flex items-center justify-between">
+            <span>{{ module.name }}</span>
+            <code class="text-sm font-mono bg-gray-200 text-gray-800 rounded px-2 py-1">{{ module.short_name }}</code>
+          </h3>
+          <p class="text-gray-600 italic mb-4 text-sm">{{ module.short_description }}</p>
+          <p class="text-gray-700 text-sm flex-grow">{{ module.comprehensive_description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% include product_support.html product_key=product_key %}

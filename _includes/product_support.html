@@ -1,0 +1,36 @@
+<!-- Support Section -->
+<div id="support" class="bg-off-black text-white py-20 md:py-24 scroll-mt-20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight text-neon-green">Support & Downloads</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Column 1: Firmware -->
+      <div>
+        <h3 class="font-eraz text-2xl mb-4">Firmware</h3>
+        <div class="space-y-3">
+          {% for firmware in site.data.products[product_key].firmwares %}
+          <a href="{{ firmware.url }}" class="flex items-center space-x-4 bg-white/10 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <svg class="w-6 h-6 text-neon-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            <span class="font-bold">Download {{ firmware.name }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Column 2: User Manuals -->
+      <div>
+        <h3 class="font-eraz text-2xl mb-4">User Manuals</h3>
+        <div class="space-y-3">
+          {% for manual in site.data.products[product_key].user_manuals %}
+          <a href="{{ manual.user_manual_url }}" class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 p-4 rounded-lg transition-colors">
+            <img src="https://flagcdn.com/w40/{{ manual.country_code }}.png" alt="{{ manual.country_code | upcase }} flag" class="w-6 h-auto">
+            <span class="font-bold">Download Manual ({{ manual.country_code | upcase }})</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
