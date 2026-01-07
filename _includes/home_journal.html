@@ -1,0 +1,17 @@
+<div class="bg-gray-100 text-off-black py-20 md:py-24">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">From the Journal</h2>
+    <div class="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {% for post in site.posts limit:2 %}
+        <div class="bg-white rounded-lg p-8 text-left shadow-md">
+          <p class="text-sm text-gray-500">{{ post.date | date: "%B %d, %Y" }}</p>
+          <h3 class="font-eraz text-2xl mt-2"><a href="{{ post.url }}" class="hover:text-neon-green transition-colors">{{ post.title }}</a></h3>
+          <p class="mt-4 text-gray-700">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <a href="/journal/" class="inline-block border border-blck text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-blck hover:text-white transition-colors mt-12">
+      Visit the Journal
+    </a>
+  </div>
+</div>

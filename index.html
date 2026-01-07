@@ -1,0 +1,46 @@
+---
+layout: default
+title: Home
+---
+
+{% include hero_main.html %}
+{% include home_journal.html %}
+
+<!-- Dynamic Product Showcase -->
+<div id="products">
+  {% for product_pair in site.data.products %}
+  {% assign product_key = product_pair[0] %}
+  {% assign product = product_pair[1] %}
+
+  <section class="{% cycle 'bg-blck', 'bg-off-black' %} text-white py-20 md:py-24">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
+        <!-- Alternating Layout -->
+        <!-- <div class="flex flex-col md:flex-row {% cycle '', 'md:flex-row-reverse' %} gap-12 lg:gap-24 items-center"> -->
+
+        <!-- Image Column -->
+        <div class="md:w-1/2">
+          <a href="/product/{{ product_key }}/" class="block relative aspect-square max-w-lg mx-auto product-image-container">
+            {% for image in product.images limit:2 %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" class="absolute inset-0 w-full h-full object-contain {% if forloop.last and product.images.size > 1 %}product-image-top{% endif %}">
+            {% endfor %}
+          </a>
+        </div>
+
+        <!-- Text Column -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="font-eraz text-4xl md:text-5xl font-bold tracking-tight text-neon-green">{{ product.title }}</h2>
+          <p class="mt-4 text-lg md:text-xl text-white/80">{{ product.subtitle }}</p>
+          {% if product.description.short %}
+          <p class="mt-6 text-white/70">{{ product.description.short }}</p>
+          {% endif %}
+          <a href="/product/{{ product_key }}/" class="inline-block bg-neon-green text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-colors mt-8">
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>

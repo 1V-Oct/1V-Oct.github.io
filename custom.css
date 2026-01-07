@@ -1,0 +1,13 @@
+.product-image-container .product-image-top {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.product-image-container:hover .product-image-top {
+  opacity: 1;
+}
+
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
