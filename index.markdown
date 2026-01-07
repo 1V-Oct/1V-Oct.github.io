@@ -106,7 +106,7 @@ title: Home
         <p>Modular in Modular</p>
         <p>Multitimbral with MIDI or VOCT control</p>
       </div>
-      <a href="https://1voct.com/product/the-centre/" target="_blank" class="mt-8 inline-block bg-white text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-neon-green transition-colors">
+      <a href="/product/the-centre/" class="mt-8 inline-block bg-white text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-neon-green transition-colors">
         Learn More
       </a>
     </div>

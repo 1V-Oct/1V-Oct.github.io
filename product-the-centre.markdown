@@ -14,14 +14,45 @@ permalink: /product/the-centre/
         <img src="/assets/img_the_centre_silver_angle.png" alt="The CENTRE Silver" class="w-full h-full object-contain" style="grid-column: 1; grid-row: 1; animation: fade-in-out 6s ease-in-out infinite;">
       </div>
       <!-- Text Column -->
-      <div class="flex flex-col justify-between h-full py-4">
+      <div class="flex flex-col justify-between h-full py-0">
         <div>
           <h1 class="font-eraz text-5xl md:text-7xl font-bold tracking-tight text-neon-green mt-8">The CENTRE</h1>
           <p class="mt-4 text-xl md:text-2xl text-white/80">A polyphonic, multitimbral, modular-in-modular synthesiser for Eurorack.</p>
         </div>
-        <a href="https://shop.1voct.com" target="_blank" class="bg-neon-green text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center mb-8">
-          Visit the Shop
-        </a>
+        <div class="mb-2">
+          <div class="flex justify-between items-end mb-4">
+            <!-- Left side: Colors -->
+            <div>
+              <h4 class="text-sm uppercase tracking-widest text-white/70 mb-2">Available colours</h4>
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                  <span class="block w-4 h-4 rounded-full bg-zinc-300 border border-gray-700"></span>
+                  <span class="text-sm text-white/90">SILVER</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="block w-4 h-4 rounded-full bg-black border border-gray-700"></span>
+                  <span class="text-sm text-white/90">BLACK</span>
+                </div>
+              </div>
+            </div>
+            <!-- Right side: Prices -->
+            <div class="text-right relative">
+              <div class="absolute -top-8 right-0 transform -rotate-12">
+                <div class="bg-red-600 text-white font-bold uppercase text-xs px-4 py-2 rounded-full shadow-lg shadow-red-500/50">
+                  {{ site.data.prices.the_centre.promotion_type }} {{ site.data.prices.the_centre.sale_discount }} OFF
+                </div>
+              </div>
+              <p class="text-xs uppercase tracking-widest text-white/70 pt-4">Current Price</p>
+              <p class="text-2xl font-bold text-white">{{ site.data.prices.the_centre.current_price }}</p>
+              <p class="text-xs uppercase tracking-widest text-white/70 mt-2">MSRP</p>
+              <p class="text-2xl text-white/70 relative inline-block"><span class="block absolute w-full h-0.5 bg-neon-green top-1/2 -translate-y-1/2 -rotate-[10deg]"></span>{{ site.data.prices.the_centre.msrp_price }}</p>
+            </div>
+          </div>
+          <a href="https://shop.1voct.com" target="_blank" class="bg-neon-green text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center block mt-6">
+            Visit the Shop
+          </a>
+          <p class="text-center text-lg text-white/50 mt-4">Looking for support? <a href="#support" class="text-white/70 hover:text-white underline">Find firmware and user manuals here.</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +65,10 @@ permalink: /product/the-centre/
         <p>This concept allows you to build complex patches by connecting virtual modules—oscillators, filters, envelopes, and LFOs—all within The Centre itself. This approach mirrors the workflow of a DAW while retaining the hands-on immediacy of hardware, supporting up to <strong>4-voice polyphony</strong> to transform an entire patch into a multi-voiced instrument.</p>
     </div>
 </div>
+
+
+
+
 
 <!-- Key Features Section -->
 <div class="bg-off-black text-white py-20 md:py-24">
@@ -232,6 +267,48 @@ permalink: /product/the-centre/
         <h3 class="font-eraz text-2xl mb-2 flex items-center justify-between"><span>Output</span><code class="text-sm font-mono bg-gray-200 text-gray-800 rounded px-2 py-1">OUT</code></h3>
         <p class="text-gray-600 italic mb-4 text-sm">Final audio output stage.</p>
         <p class="text-gray-700 text-sm flex-grow">OUT handles the module's physical and virtual outputs, with gain staging and monitoring. It ensures clean signal routing in multi-timbral setups.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Support Section -->
+<div id="support" class="bg-off-black text-white py-20 md:py-24 scroll-mt-20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">Support & Downloads</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Column 1: Firmware -->
+      <div>
+        <h3 class="font-eraz text-2xl mb-4">Firmware</h3>
+        <div class="space-y-3">
+          {% if site.data.products.the_centre.stable_firmware != "" %}
+          <a href="{{ site.data.products.the_centre.stable_firmware }}" class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span class="text-lg">⬇️</span>
+            <span class="font-bold">Download Stable Firmware</span>
+          </a>
+          {% endif %}
+          {% if site.data.products.the_centre.beta_firmware != "" %}
+          <a href="{{ site.data.products.the_centre.beta_firmware }}" class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span class="text-lg">🧪</span>
+            <span class="font-bold">Download BETA Firmware</span>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <!-- Column 2: User Manuals -->
+      <div>
+        <h3 class="font-eraz text-2xl mb-4">User Manuals</h3>
+        <div class="space-y-3">
+          {% for manual in site.data.products.the_centre.user_manuals %}
+          <a href="{{ manual.user_manual_url }}" class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 p-4 rounded-lg transition-colors">
+            <img src="https://flagcdn.com/w40/{{ manual.country_code }}.png" alt="{{ manual.country_code | upcase }} flag" class="w-6 h-auto">
+            <span class="font-bold">Download Manual ({{ manual.country_code | upcase }})</span>
+          </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
