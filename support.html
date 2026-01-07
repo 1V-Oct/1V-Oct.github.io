@@ -1,0 +1,49 @@
+---
+layout: default
+title: Support & Downloads
+permalink: /support/
+---
+
+<div class="bg-off-black text-white py-20 md:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-eraz font-bold tracking-tight text-neon-green">Support & Downloads</h1>
+      <p class="mt-4 text-lg text-white/70">Find the latest firmware and user manuals for all 1V/OCT products.</p>
+    </div>
+
+    <div class="space-y-16">
+      {% for product_pair in site.data.products %}
+        {% assign product = product_pair[1] %}
+        <section id="{{ product.title | slugify }}">
+          <h2 class="text-3xl md:text-4xl font-eraz font-bold tracking-tight mb-8 border-b border-white/10 pb-4">{{ product.title }}</h2>
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+            <!-- Firmware -->
+            <div>
+              <h3 class="font-eraz text-2xl mb-4">Firmware</h3>
+              <div class="space-y-3">
+                {% for firmware in product.firmwares %}
+                  <a href="{{ firmware.url }}" class="flex items-center space-x-4 bg-white/10 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <svg class="w-6 h-6 text-neon-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                    <span class="font-bold">Download {{ firmware.name }}</span>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+            <!-- User Manuals -->
+            <div>
+              <h3 class="font-eraz text-2xl mb-4">Documentation</h3>
+              <div class="space-y-3">
+                {% for manual in product.user_manuals %}
+                  <a href="{{ manual.url }}" class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 p-4 rounded-lg transition-colors">
+                    <img src="https://flagcdn.com/w40/{{ manual.country_code }}.png" alt="{{ manual.country_code | upcase }} flag" class="w-6 h-auto">
+                    <span class="font-bold">Download {{ manual.name }}</span>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+</div>

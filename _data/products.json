@@ -1,14 +1,104 @@
 {
   "the_centre": {
+    "title": "The CENTRE",
+    "subtitle": "A polyphonic, multitimbral, modular-in-modular synthesiser for Eurorack.",
+    "description": {
+      "title": "A New Core for Your Rack",
+      "body": "The Centre redefines what's possible within a single Eurorack module. At its core, it's a high-fidelity wavetable synthesizer, but its true power lies in its <strong>\"modular-in-modular\"</strong> architecture.<br>This concept allows you to build complex patches by connecting virtual modules—oscillators, filters, envelopes, and LFOs—all within The Centre itself. This approach mirrors the workflow of a DAW while retaining the hands-on immediacy of hardware, supporting up to <strong>4-voice polyphony</strong> to transform an entire patch into a multi-voiced instrument.",
+      "short": "The Centre is a powerful polyphonic synthesizer module for Eurorack, featuring modular-in-modular architecture, 4 V/OCT inputs, and 4 DC-coupled outputs. It offers high-quality sound with 32-bit floating point processing, a variety of built-in modules, and extensive connectivity options.",
+      "long": "The Centre is a groundbreaking polyphonic synthesizer module designed for Eurorack systems. It features a modular-in-modular architecture that allows users to create complex patches with ease. With 4 V/OCT calibrated inputs and 4 DC-coupled outputs, The Centre provides extensive connectivity options for integrating with other modules and external gear. The module boasts high-quality sound processing with 32-bit floating point architecture, ensuring pristine audio quality. It includes a variety of built-in modules such as a wavetable oscillator, arpeggiator, envelope generator, and more, making it a versatile tool for sound design and music production."
+
+    },
+    "images": [
+      { "src": "/assets/img_the_centre_black_angle.png", "alt": "The CENTRE Black", "animated": false },
+      { "src": "/assets/img_the_centre_silver_angle.png", "alt": "The CENTRE Silver", "animated": true }
+    ],
     "current_price": "$349 USD",
     "sale_discount": "50%",
     "promotion_type": "CNY SALE",
     "msrp_price": "$699 USD",
-    "stable_firmware": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/the_centre_v4.fwx",
-    "beta_firmware":  "",
+    "firmwares": [
+      { "version": "3.4.1", "name": "Stable Firmware v3.4.1", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/the_centre_v4.fwx" }
+    ],
     "user_manuals": [
-      { "country_code": "gb", "user_manual_url": "/downloads/the_centre_manual_en.pdf" },
-      { "country_code": "de", "user_manual_url": "/downloads/the_centre_manual_de.pdf" }
+      { "country_code": "gb", "name":"User Manual EN", "url": "/downloads/the_centre_manual_en.pdf" },
+      { "country_code": "jp", "name":"User Manual JP", "url": "/downloads/the_centre_manual_de.pdf" }
+    ],
+    "key_features": [
+      {
+        "name": "Hardware & Connectivity",
+        "items": [
+          "<strong>4 VOUT</strong> DC-Coupled Outputs (Audio/CV)",
+          "<strong>96kHz and 48kHz</strong> processing modes",
+          "<strong>90dB SNR</strong> Audio DAC",
+          "<strong>16 Assignable Knobs</strong> (8 Level, 8 Attenuator)",
+          "<strong>4 V/OCT</strong> Calibrated Inputs",
+          "<strong>4 CVY</strong> Low-Latency Gate Inputs",
+          "<strong>8 CV</strong> General-Purpose CV Inputs (-10V to +10V)",
+          "Fast Rotary Encoder for menu navigation"
+        ]
+      },
+      {
+        "name": "Core Architecture",
+        "items": [
+          "<strong>32bit Floating point processing</strong> for high audio quality",
+          "<strong>Modular-in-Modular</strong> internal patching",
+          "<strong>4-Voice Polyphony</strong> across the entire patch",
+          "<strong>Virtual Audio Buffers (VBuf)</strong> for internal routing",
+          "Internal CV modulation between all modules",
+          "Full Preset System to save and recall patches"
+        ]
+      },
+      {
+        "name": "Featured Modules",
+        "items": [
+          "Advanced <strong>Wavetable Oscillator</strong> (WTO)",
+          "Flexible 8-Step <strong>Arpeggiator</strong> (ARP)",
+          "AHDSR/AHDR <strong>Envelope Generator</strong> (ENV)",
+          "Custom Shape <strong>LFO</strong> (LFS) with Serum/Vital import",
+          "4-Channel <strong>Gate Divider</strong> (GAT)",
+          "Plus VCF, VCA, Mixers, and more utilities"
+        ]
+      }
+    ]
+  },
+  "taipo": {
+    "title": "Taipo",
+    "subtitle": "MIDI Extender for The Centre and Twins",
+    "msrp_price": "$39 USD",
+    "current_price": "$34 USD",
+    "sale_discount": "10%",
+    "promotion_type": "CNY SALE",
+    "firmwares": [
+    ],
+    "user_manuals": [
+      { "country_code": "gb", "name":"User Manual EN", "url": "/downloads/taipo_manual_en.pdf" }
+    ],
+    "key_features": [
+      {
+        "name": "Core Features",
+        "items": [
+          "MIDI In/Out for The Centre and Twins",
+          "USB-C for MIDI and Firmware Updates",
+          "Built-in MIDI Thru",
+          "MIDI Clock Sync",
+          "MIDI Note Transposition"
+        ]
+      }
+    ]
+  },
+  "twins": {
+    "title": "Twins",
+    "subtitle": "Quad FX Processor",
+    "description": {
+      "title": "Versatile Quad FX Processor",
+      "body": "Twins is a powerful quad effects processor designed to bring a new dimension of sound design to your Eurorack setup. With four independent effect channels, each capable of hosting a variety of high-quality effects, Twins allows you to create complex and evolving soundscapes.<br>Whether you're looking to add lush reverb, dynamic delay, gritty distortion, or modulation effects like chorus and flanger, Twins has you covered. Each effect channel can be controlled individually, giving you the flexibility to shape your sound in real-time. The intuitive interface and extensive connectivity options make Twins an essential tool for any modular synthesizer enthusiast."
+    },
+    "msrp_price": "$299 USD",
+    "current_price": "$199 USD",
+    "sale_discount": "33%",
+    "promotion_type": "CNY SALE",
+    "firmwares": [
     ]
   }
 }

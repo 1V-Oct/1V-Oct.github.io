@@ -4,5 +4,17 @@
     "sale_discount": "50%",
     "promotion_type": "CNY SALE",
     "msrp_price": "$699 USD"
+  },
+  "twins": {
+    "current_price": "$199 USD",
+    "sale_discount": "33%",
+    "promotion_type": "CNY SALE",
+    "msrp_price": "$299 USD"
+  },
+  "taipo": {
+    "current_price": "$34 USD",
+    "sale_discount": "10%",
+    "promotion_type": "CNY SALE",
+    "msrp_price": "$39 USD"
   }
 }

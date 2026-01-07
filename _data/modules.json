@@ -1,0 +1,148 @@
+{
+    "modules": [
+        {
+            "name": "Wavetable Oscillator",
+            "short_name": "WTO",
+            "short_description": "Advanced wavetable-based sound generator with stereo output and unison capabilities.",
+            "comprehensive_description": "The Wavetable Oscillator (WTO) is the core sound source in The Centre, inspired by software like Serum. It supports loading wavetables from VST formats, allowing up to 16 sub-oscillators per voice in unison mode with detune for thick, chorused sounds. It can handle multiple instances (up to 200 oscillators total across voices) and includes overload protection to manage CPU usage. Controls map to frequency, position, warp, and volume, with CV modulation for dynamic morphing."
+        },
+        {
+            "name": "Voltage Controlled Oscillator",
+            "short_name": "VCO",
+            "short_description": "Classic analog-style oscillator with multiple waveforms.",
+            "comprehensive_description": "The VCO emulates traditional voltage-controlled oscillators, generating sine, square, triangle, sawtooth, and pulse waveforms. It responds to 1V/Oct pitch CV and supports FM/AM modulation. Ideal for subtractive synthesis, it can be synced to clocks for rhythmic effects and used in polyphonic patches."
+        },
+        {
+            "name": "Low Frequency Shaper",
+            "short_name": "LFS",
+            "short_description": "Shape-based low-frequency modulator with custom editing.",
+            "comprehensive_description": "LFS generates complex modulation shapes beyond standard LFOs, allowing users to load or edit arbitrary waveforms via the integrated Shape Editor. It supports position quantization for rhythmic precision and can be clock-synced. Controls include rate, amplitude, and shape selection, making it versatile for evolving modulations in polyphonic contexts."
+        },
+        {
+            "name": "Low Frequency Oscillator",
+            "short_name": "LFO",
+            "short_description": "Standard low-frequency modulator with various waveforms.",
+            "comprehensive_description": "The LFO provides sine, triangle, square, saw, and random waveforms for modulation. It can be free-running or clock-synced, with controls for rate, depth, and phase. Multiple LFOs can be instantiated per voice for polyphonic modulation of parameters like filter cutoff or pitch."
+        },
+        {
+            "name": "Envelope Generator",
+            "short_name": "ENV",
+            "short_description": "AHDSR envelope for shaping amplitude or modulation.",
+            "comprehensive_description": "The ENV is an Attack-Hold-Decay-Sustain-Release generator with multiple types (e.g., linear, exponential) and trigger modes (gate, trigger). It features stages for precise control and can loop for LFO-like behavior. In polyphonic mode, each voice gets its own envelope for independent dynamics."
+        },
+        {
+            "name": "Voltage Controlled Amplifier",
+            "short_name": "VCA",
+            "short_description": "Amplifier controlled by voltage for volume shaping.",
+            "comprehensive_description": "The VCA modulates audio or CV signals with an envelope or LFO input. It supports sidechain compression for ducking effects and operates in linear or exponential modes. Essential for polyphonic patches, it ensures per-voice amplitude control."
+        },
+        {
+            "name": "Balanced Ring Modulator",
+            "short_name": "BRM",
+            "short_description": "Ring modulation effect for metallic tones.",
+            "comprehensive_description": "BRM multiplies two signals to create sum/difference frequencies, producing bell-like or robotic sounds. It's balanced to minimize carrier bleed and supports CV control over modulation depth. Useful in wavetable patches for adding harmonics."
+        },
+        {
+            "name": "Sample Player",
+            "short_name": "SMP",
+            "short_description": "Plays back samples with looping and grain options.",
+            "comprehensive_description": "SMP loads samples from SD card, supporting looping, granular playback, and pitch/speed control via CV. It can trigger grains for textural effects and works in polyphonic mode for layered samples or drum hits."
+        },
+        {
+            "name": "Noise Generator",
+            "short_name": "NOI",
+            "short_description": "Produces various noise types for percussion or texture.",
+            "comprehensive_description": "NOI generates white, pink, brown, and other noise waveforms, filterable for specific spectra. It's useful for snares, hats, or modulation sources in synthesis patches."
+        },
+        {
+            "name": "Delay",
+            "short_name": "DLY",
+            "short_description": "LoFi delay effect with feedback.",
+            "comprehensive_description": "The DLY is a low-fidelity delay with time, feedback, and mix controls, syncable to clock for rhythmic echoes. It adds space and movement to sounds, with CV modulation for dub-style effects."
+        },
+        {
+            "name": "Distortion",
+            "short_name": "DST",
+            "short_description": "Overdrive and distortion for adding grit.",
+            "comprehensive_description": "DST applies waveshaping distortion, from subtle warmth to aggressive clipping. Controls include drive, tone, and mix, making it ideal for fattening wavetables or VCOs."
+        },
+        {
+            "name": "Voltage Controlled Filter",
+            "short_name": "VCF",
+            "short_description": "Multi-mode filter with resonance.",
+            "comprehensive_description": "The VCF offers low-pass, high-pass, band-pass, and notch modes, with ladder, bi-quad, and comb types. It tracks 1V/Oct for key-following and supports resonance up to self-oscillation for classic synth sounds."
+        },
+        {
+            "name": "Drum Rack",
+            "short_name": "DRC",
+            "short_description": "Sample-based drum machine with MIDI triggering.",
+            "comprehensive_description": "DRC loads drum samples into racks, triggerable via MIDI or gates for polyphonic percussion. It supports velocity sensitivity and mixing, enabling multi-timbral drum layers alongside melodic voices."
+        },
+        {
+            "name": "Clock Generator",
+            "short_name": "CLK",
+            "short_description": "Generates clocks for synchronization.",
+            "comprehensive_description": "CLK produces internal clocks based on BPM, with divisions and external sync options. It outputs pulses (1-24 PPQN) to drive sequencers, LFOs, or other modules for tempo-locked performance."
+        },
+        {
+            "name": "Gate Divider",
+            "short_name": "GAT",
+            "short_description": "Divides incoming gates for rhythmic patterns.",
+            "comprehensive_description": "GAT takes clock/gate inputs and divides them (e.g., /2, /3) to create sub-rhythms. It's essential for polyrhythmic setups and can reset via CV."
+        },
+        {
+            "name": "Euclidean Rhythm Generator",
+            "short_name": "EUC",
+            "short_description": "Generates Euclidean patterns for complex rhythms.",
+            "comprehensive_description": "EUC creates evenly distributed pulses within steps, with controls for hits, length, and rotation. CV-modulable for evolving beats, it's great for generative music."
+        },
+        {
+            "name": "Polyrhythm",
+            "short_name": "PLY",
+            "short_description": "Creates overlapping rhythmic layers.",
+            "comprehensive_description": "PLY generates multiple independent rhythms that overlay for polyrhythmic complexity. Controls include individual rates and gates, syncable to master clock."
+        },
+        {
+            "name": "Random Note Generator",
+            "short_name": "RNG",
+            "short_description": "Produces random pitches within constraints.",
+            "comprehensive_description": "RNG outputs random notes or CV values, quantized to scales. It can be clock-triggered for melodic randomness in arps or sequences."
+        },
+        {
+            "name": "Quantiser",
+            "short_name": "QNT",
+            "short_description": "Snaps CV to musical scales.",
+            "comprehensive_description": "QNT quantizes incoming CV to predefined or custom scales (including Scala format). It has simple and advanced modes for musical or microtonal tuning."
+        },
+        {
+            "name": "Arpeggiator",
+            "short_name": "ARP",
+            "short_description": "Breaks chords into sequenced notes.",
+            "comprehensive_description": "ARP sequences held notes in patterns (up, down, random) with octave range, rests, and duration control. It can be externally positioned via CV for integration with sequencers."
+        },
+        {
+            "name": "Chords Generator",
+            "short_name": "CHD",
+            "short_description": "Generates polyphonic chords from single notes.",
+            "comprehensive_description": "CHD turns single-note inputs into chords (e.g., major, minor) with voicing options. It supports duration and inversion, ideal for polyphonic harmony in limited-voice setups."
+        },
+        {
+            "name": "MIDI",
+            "short_name": "MID",
+            "short_description": "Handles MIDI input/output for control.",
+            "comprehensive_description": "MID module processes MIDI notes, CCs, and clocks in single-note, polyphonic, or drum modes. It enables external control and multi-timbral routing via channels."
+        },
+        {
+            "name": "Mixer",
+            "short_name": "MIX",
+            "short_description": "Mixes multiple signals with levels.",
+            "comprehensive_description": "MIX combines audio/CV sources with per-channel levels and panning. It supports polyphonic downmixing for routing multiple voices to fewer outputs."
+        },
+        {
+            "name": "Output",
+            "short_name": "OUT",
+            "short_description": "Final audio output stage.",
+            "comprehensive_description": "OUT handles the module's physical and virtual outputs, with gain staging and monitoring. It ensures clean signal routing in multi-timbral setups."
+        }
+    ]
+}
