@@ -1,0 +1,14 @@
+{
+  "the_centre": {
+    "current_price": "$349 USD",
+    "sale_discount": "50%",
+    "promotion_type": "CNY SALE",
+    "msrp_price": "$699 USD",
+    "stable_firmware": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/the_centre_v4.fwx",
+    "beta_firmware":  "",
+    "user_manuals": [
+      { "country_code": "gb", "user_manual_url": "/downloads/the_centre_manual_en.pdf" },
+      { "country_code": "de", "user_manual_url": "/downloads/the_centre_manual_de.pdf" }
+    ]
+  }
+}

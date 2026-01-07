@@ -1,0 +1,105 @@
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Configure Tailwind CSS with custom theme
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blck': '#000000',
+                        'white': '#f5f5f7',
+                        'off-black': '#1d1d1f',
+                        'neon-green': '#C2FF0B',
+                    },
+                    fontFamily: {
+                        'eraz': ['ERAZ BOLD', 'sans-serif'],
+                        'london': ['LondonTwo', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss"> 
+        @layer base {
+          @font-face {
+            font-family: 'ERAZ BOLD';
+            src: url('/fonts/itc_eras_bold.otf') format('opentype');
+          }
+          @font-face {
+            font-family: 'LondonTwo';
+            src: url('/fonts/LondonTwo.ttf') format('truetype');
+          }
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @keyframes pulse-logo {
+            0%, 100% {
+                transform: scale(1);
+                color: #C2FF0B; /* neon-green */
+            }
+            50% {
+                transform: scale(0.97);
+                color: #698909; /* Darker neon-green */
+            }
+        }
+
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+    <style>
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-off-black font-london">
+
+
+  {% include header.html %}
+
+  <main>
+    {{ content }}  <!-- This is where page/post content goes -->
+  </main>
+
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productsButton = document.getElementById('products-button');
+      const productsMenu = document.getElementById('products-menu');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (productsButton && productsMenu) {
+        productsButton.addEventListener('click', function (event) {
+          event.stopPropagation();
+          productsMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function (event) {
+          if (!productsMenu.contains(event.target) && !productsButton.contains(event.target)) {
+            productsMenu.classList.add('hidden');
+          }
+        });
+      }
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function () {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
