@@ -9,7 +9,8 @@
     "current_price": "----",
     "sale_discount": "",
     // "promotion_type": "CNY SALE",
-    "msrp_price": "$499 USD"
+    "msrp_price": "$499 USD",
+    "kickstarter": "yes"
   },
   "taipo": {
     "current_price": "$34 USD",

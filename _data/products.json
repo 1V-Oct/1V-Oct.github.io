@@ -9,8 +9,8 @@
       "long": "The Centre is a groundbreaking polyphonic synthesizer module designed for Eurorack systems. It features a modular-in-modular architecture that allows users to create complex patches with ease. With 4 V/OCT calibrated inputs and 4 DC-coupled outputs, The Centre provides extensive connectivity options for integrating with other modules and external gear. The module boasts high-quality sound processing with 32-bit floating point architecture, ensuring pristine audio quality. It includes a variety of built-in modules such as a wavetable oscillator, arpeggiator, envelope generator, and more, making it a versatile tool for sound design and music production."
     },
     "images": [
-      { "src": "/assets/img_the_centre_black_angle.png", "alt": "The CENTRE Black", "animated": false },
-      { "src": "/assets/img_the_centre_silver_angle.png", "alt": "The CENTRE Silver", "animated": true }
+      { "src": "/assets/product/the_centre_black_angle.png", "alt": "The CENTRE Black", "animated": false },
+      { "src": "/assets/product/the_centre_silver_angle.png", "alt": "The CENTRE Silver", "animated": true }
     ],
     "current_price": "$349 USD",
     "sale_discount": "50%",

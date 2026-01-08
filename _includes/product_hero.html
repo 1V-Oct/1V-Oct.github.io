@@ -43,9 +43,15 @@
               <p class="text-2xl text-white/70 relative inline-block"><span class="block absolute w-full h-0.5 bg-neon-green top-1/2 -translate-y-1/2 -rotate-[10deg]"></span>{{ site.data.prices[product_key].msrp_price }}</p>
             </div>
           </div>
-          <a href="https://shop.1voct.com" target="_blank" class="bg-neon-green text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center block mt-6">
-            Visit the Shop
-          </a>
+          {% if site.data.prices[product_key].kickstarter == "yes" %}
+            <a href="https://www.kickstarter.com/" target="_blank" class="bg-yellow-400 text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center block mt-6">
+              KICKSTARTER PROJECT
+            </a>
+          {% else %}
+            <a href="https://shop.1voct.com" target="_blank" class="bg-neon-green text-blck font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-white transition-colors w-full text-center block mt-6">
+              Visit the Shop
+            </a>
+          {% endif %}
           <p class="text-center text-xl text-white/50 mt-4">Looking for support? <a href="#support" class="text-white/70 hover:text-white underline">Find firmware and user manuals here.</a></p>
         </div>
       </div>
