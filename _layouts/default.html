@@ -1,33 +1,31 @@
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        // Configure Tailwind CSS with custom theme
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'blck': '#000000',
-                        'white': '#f5f5f7',
-                        'off-black': '#1d1d1f',
-                        'neon-green': '#C2FF0B',
-                    },
-                    fontFamily: {
-                      // 'eraz': ['"Racing Sans One"', 'sans-serif'],
-                      'eraz': ['ERAZ BOLD', 'sans-serif'],
-                      'london': ['LondonTwo', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/assets/styles/style.css">
-    <style type="text/tailwindcss"> 
-        @layer base {
+<script>
+  // Configure Tailwind CSS with custom theme
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'blck': '#000000',
+          'white': '#f5f5f7',
+          'off-black': '#1d1d1f',
+          'neon-green': '#C2FF0B',
+        },
+        fontFamily: {
+          // 'eraz': ['"Racing Sans One"', 'sans-serif'],
+          'eraz': ['ERAZ BOLD', 'sans-serif'],
+          'london': ['LondonTwo', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/styles/style.css">
+<style type="text/tailwindcss">
+  @layer base {
           @font-face {
             font-family: 'ERAZ BOLD';
             src: url('/fonts/itc_eras_bold.otf') format('opentype');
@@ -58,22 +56,22 @@
             50% { opacity: 1; }
         }
     </style>
-    <style>
-        .glass-nav {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-    </style>
+<style>
+  .glass-nav {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>
 </head>
+
 <body class="bg-gray-100 text-off-black font-london">
 
 
   {% include header.html %}
 
   <main>
-    {{ content }}  <!-- This is where page/post content goes -->
+    {{ content }} <!-- This is where page/post content goes -->
   </main>
 
   {% include footer.html %}
@@ -105,5 +103,54 @@
       }
     });
   </script>
+
+
+  <script>
+    document.querySelectorAll('form[data-form="subscribe"]').forEach(form => {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const currentForm = event.target;
+        const formData = new FormData(currentForm);
+        const data = Object.fromEntries(formData.entries());
+        const responseDiv = currentForm.nextElementSibling;
+
+        // Handle tags - split by comma and trim whitespace, then create an array
+        const tagsInput = currentForm.querySelector('input[name="tags"]');
+        if (tagsInput && tagsInput.value) {
+          data.tags = tagsInput.value.split(',').map(tag => tag.trim());
+        }
+
+        const baseUrl = 'https://inventor.1voct.org';
+        const apiUrl = `${baseUrl}/inventor/api/create_crm_user/`;
+
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then(response => response.json())
+          .then(result => {
+            if (result.status === 'success') {
+              responseDiv.className = 'text-brand-gold';
+              responseDiv.textContent = 'Thank you for subscribing!';
+              currentForm.reset();
+            } else {
+              responseDiv.className = 'text-red-400';
+              responseDiv.textContent = 'Error: ' + (result.message || 'An unknown error occurred.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            responseDiv.className = 'text-red-400';
+            responseDiv.textContent = 'A network error occurred. Please try again.';
+          });
+      });
+    });
+  </script>
+
 </body>
+
 </html>

@@ -59,6 +59,10 @@
   </div>
 </div>
 
+{% if site.data.prices[product_key].kickstarter == "yes" %}
+  {% include subscribe_kickstarter_news.html product_key=product_key %}
+{% endif %}
+
 <div class="bg-neutral-800 text-white/80 py-16 md:py-20 border-t border-white/10">
     <div class="container mx-auto px-6 prose prose-invert lg:prose-lg prose-headings:font-eraz prose-strong:text-white bg-neutral-800">
         <h2 class="!text-3xl !mt-0">{{ site.data.products[product_key].description.title  }}</h2>
