@@ -1,0 +1,40 @@
+<!-- Chinese New Year Promotion Section -->
+<div class="bg-gray-100 py-12 md:py-20">
+  <div class="container mx-auto px-6">
+    <div class="bg-off-black rounded-2xl shadow-2xl p-8 md:p-12 text-center relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-48 h-48 bg-red-800/20 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
+
+      <div class="relative">
+        <h2 class="text-3xl md:text-5xl font-eraz font-bold tracking-tight text-white mb-2">Chinese New Year Sale</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">Celebrate with incredible savings on our flagship gear!</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {% for product_hash in site.data.products %}
+            {% assign product = product_hash[1] %}
+            {% if product.promotion_type == "CNY SALE" %}
+              <div class="bg-gray-900/50 rounded-xl p-6 flex flex-col items-center border border-gray-700 hover:border-neon-green transition-colors duration-300">
+                <h3 class="text-2xl font-eraz text-white">{{ product.title }}</h3>
+                <p class="text-gray-400 text-sm mb-4">{{ product.subtitle }}</p>
+                
+                <div class="my-4">
+                  <span class="text-4xl font-bold text-neon-green">{{ product.current_price }}</span>
+                  <span class="text-lg text-gray-500 line-through ml-2">{{ product.msrp_price }}</span>
+                </div>
+
+                <div class="bg-red-700 text-white font-bold text-sm rounded-full px-4 py-1 mb-6">
+                  SAVE {{ product.sale_discount }}
+                </div>
+
+                <a href="/#{{ product_hash[0] }}" class="mt-auto bg-neon-green text-off-black font-bold py-2 px-6 rounded-lg hover:bg-white transition-colors duration-300">
+                  Learn More
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

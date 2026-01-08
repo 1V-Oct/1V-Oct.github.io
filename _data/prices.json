@@ -6,10 +6,10 @@
     "msrp_price": "$699 USD"
   },
   "twins": {
-    "current_price": "$199 USD",
-    "sale_discount": "33%",
-    "promotion_type": "CNY SALE",
-    "msrp_price": "$299 USD"
+    "current_price": "----",
+    "sale_discount": "",
+    // "promotion_type": "CNY SALE",
+    "msrp_price": "$499 USD"
   },
   "taipo": {
     "current_price": "$34 USD",

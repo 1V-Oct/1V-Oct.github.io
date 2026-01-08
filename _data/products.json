@@ -7,7 +7,6 @@
       "body": "The Centre redefines what's possible within a single Eurorack module. At its core, it's a high-fidelity wavetable synthesizer, but its true power lies in its <strong>\"modular-in-modular\"</strong> architecture.<br>This concept allows you to build complex patches by connecting virtual modules—oscillators, filters, envelopes, and LFOs—all within The Centre itself. This approach mirrors the workflow of a DAW while retaining the hands-on immediacy of hardware, supporting up to <strong>4-voice polyphony</strong> to transform an entire patch into a multi-voiced instrument.",
       "short": "The Centre is a powerful polyphonic synthesizer module for Eurorack, featuring modular-in-modular architecture, 4 V/OCT inputs, and 4 DC-coupled outputs. It offers high-quality sound with 32-bit floating point processing, a variety of built-in modules, and extensive connectivity options.",
       "long": "The Centre is a groundbreaking polyphonic synthesizer module designed for Eurorack systems. It features a modular-in-modular architecture that allows users to create complex patches with ease. With 4 V/OCT calibrated inputs and 4 DC-coupled outputs, The Centre provides extensive connectivity options for integrating with other modules and external gear. The module boasts high-quality sound processing with 32-bit floating point architecture, ensuring pristine audio quality. It includes a variety of built-in modules such as a wavetable oscillator, arpeggiator, envelope generator, and more, making it a versatile tool for sound design and music production."
-
     },
     "images": [
       { "src": "/assets/img_the_centre_black_angle.png", "alt": "The CENTRE Black", "animated": false },
@@ -65,6 +64,10 @@
   "taipo": {
     "title": "Taipo",
     "subtitle": "MIDI Extender for The Centre and Twins",
+    "images": [
+      { "src": "/assets/product/taipo_black_angle.png", "alt": "TAIPO Black", "animated": false },
+      { "src": "/assets/product/taipo_silver_angle.png", "alt": "TAIPO Silver", "animated": true }
+    ],
     "msrp_price": "$39 USD",
     "current_price": "$34 USD",
     "sale_discount": "10%",
@@ -94,6 +97,10 @@
       "title": "Versatile Quad FX Processor",
       "body": "Twins is a powerful quad effects processor designed to bring a new dimension of sound design to your Eurorack setup. With four independent effect channels, each capable of hosting a variety of high-quality effects, Twins allows you to create complex and evolving soundscapes.<br>Whether you're looking to add lush reverb, dynamic delay, gritty distortion, or modulation effects like chorus and flanger, Twins has you covered. Each effect channel can be controlled individually, giving you the flexibility to shape your sound in real-time. The intuitive interface and extensive connectivity options make Twins an essential tool for any modular synthesizer enthusiast."
     },
+    "images": [
+      { "src": "/assets/product/twins_black_angle.png", "alt": "TAIPO Black", "animated": false },
+      { "src": "/assets/product/twins_silver_angle.png", "alt": "TAIPO Silver", "animated": true }
+    ],
     "msrp_price": "$299 USD",
     "current_price": "$199 USD",
     "sale_discount": "33%",
