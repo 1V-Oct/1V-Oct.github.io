@@ -7,8 +7,67 @@ title: Home
 {% comment %}
 {% include ads/cny-promotion.html %}
 {% endcomment %}
+
+<!-- Pronunciation Section -->
+<div class="bg-gray-200 text-off-black py-16 prose-headings:font-eraz prose-headings:tracking-tight">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-eraz font-bold tracking-tight">1V/OCT aka One Volt Per Octave</h2>
+    <p class="mt-2 text-md md:text-lg text-gray-500 font-mono">/wʌn voʊlt pər ˈɒk.tɪv/</p>
+    <p class="mt-6 text-gray-700">The name refers to both our brand and a fundamental term in modular synthesis that describes how pitch is controlled.</p>
+    <button id="definition-button" class="mt-6 inline-block border border-blck text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-blck hover:text-white transition-colors">
+      See Definition
+    </button>
+  </div>
+</div>
+
+<!-- Definition Modal -->
+<div id="definition-modal" class="fixed inset-0 bg-black/60 z-50 hidden justify-center p-4 items-center">
+  <div class="bg-gray-200 text-off-black rounded-lg shadow-2xl max-w-2xl w-full p-8 md:p-12 relative prose prose-headings:font-eraz prose-headings:tracking-tight prose-strong:text-off-black prose-ul:pl-6 prose-li:marker:text-off-black/80">
+    <button id="close-modal-button" class="absolute top-4 right-4 text-gray-600 hover:text-black transition-colors">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <h3 class="!text-3xl !mt-0 font-eraz text-center">1V/octave (1 Volt per Octave)</h3>
+    <p>The 1V/oct standard is the most widely adopted control voltage scaling convention in modern modular synthesizers. It defines a linear relationship between control voltage and musical pitch, such that:</p>
+    <ul>
+      <li>An increase of exactly <strong>1 volt</strong> corresponds to a precise rise of <strong>one octave</strong> in pitch.</li>
+      <li>Consequently, a change of approximately <strong>83.33 mV</strong> (1/12 V) produces a shift of one semitone.</li>
+    </ul>
+    <p>This exponential (logarithmic in frequency) voltage-to-pitch scaling ensures accurate and predictable tracking across multiple octaves when connecting controllers, sequencers, keyboard interfaces, or quantizers to voltage-controlled oscillators (VCOs), filters, or other 1V/oct-compatible modules.</p>
+    <p>The 1V/oct standard provides excellent compatibility between equipment from different manufacturers and is the de facto industry norm in contemporary Eurorack and most other modular formats.</p>
+    <p><em>(Contrast with the older Hz/Volt system, which uses linear frequency scaling and is found primarily in certain vintage or specialized synthesizers.)</em></p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('definition-modal');
+    const openBtn = document.getElementById('definition-button');
+    const closeBtn = document.getElementById('close-modal-button');
+
+    const toggleModal = () => {
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    };
+
+    openBtn.addEventListener('click', toggleModal);
+    closeBtn.addEventListener('click', toggleModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) toggleModal();
+    });
+  });
+</script>
+</div>
+
 {% include ads/cny_super_promotion.html %}
-{% include home_journal.html %}
+<div class="bg-off-black">
+  {% include home_journal.html %}
+</div>
+
 
 <!-- Dynamic Product Showcase -->
 <div id="products">
@@ -18,31 +77,33 @@ title: Home
 
   <section class="{% cycle 'bg-blck', 'bg-off-black' %} text-white py-20 md:py-24">
     <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
-        <!-- Alternating Layout -->
-        <!-- <div class="flex flex-col md:flex-row {% cycle '', 'md:flex-row-reverse' %} gap-12 lg:gap-24 items-center"> -->
+      <div class="bg-gradient-to-b from-off-black to-blck rounded-2xl p-8 md:p-12">
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
+          <!-- Alternating Layout -->
+          <!-- <div class="flex flex-col md:flex-row {% cycle '', 'md:flex-row-reverse' %} gap-12 lg:gap-24 items-center"> -->
 
-        <!-- Image Column -->
-        <div class="md:w-1/2">
-          <a href="/product/{{ product_key }}/" class="block relative aspect-square max-w-lg mx-auto product-image-container">
-            {% for image in product.images limit:2 %}
-            <img src="{{ image.src }}" alt="{{ image.alt }}" class="absolute inset-0 w-full h-full object-contain {% if forloop.last and product.images.size > 1 %}product-image-top{% endif %}">
-            {% endfor %}
-          </a>
+          <!-- Image Column -->
+          <div class="md:w-1/2">
+            <a href="/product/{{ product_key }}/" class="block relative aspect-square max-w-lg mx-auto product-image-container">
+              {% for image in product.images limit:2 %}
+              <img src="{{ image.src }}" alt="{{ image.alt }}" class="absolute inset-0 w-full h-full object-contain {% if image.animated %}z-10{% endif %}" style="{% if image.animated %}animation: fade-in-out 6s ease-in-out infinite;{% endif %}">
+              {% endfor %}
+            </a>
+          </div>
+
+          <!-- Text Column -->
+          <div class="md:w-1/2 text-center md:text-left">
+            <h2 class="font-eraz text-4xl md:text-5xl font-bold tracking-tight text-neon-green">{{ product.title }}</h2>
+            <p class="mt-4 text-lg md:text-xl text-white/80">{{ product.subtitle }}</p>
+            {% if product.description.short %}
+            <p class="mt-6 text-white/70">{{ product.description.short }}</p>
+            {% endif %}
+            <a href="/product/{{ product_key }}/" class="inline-block bg-neon-green text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-colors mt-8">
+              Learn More
+            </a>
+          </div>
+
         </div>
-
-        <!-- Text Column -->
-        <div class="md:w-1/2 text-center md:text-left">
-          <h2 class="font-eraz text-4xl md:text-5xl font-bold tracking-tight text-neon-green">{{ product.title }}</h2>
-          <p class="mt-4 text-lg md:text-xl text-white/80">{{ product.subtitle }}</p>
-          {% if product.description.short %}
-          <p class="mt-6 text-white/70">{{ product.description.short }}</p>
-          {% endif %}
-          <a href="/product/{{ product_key }}/" class="inline-block bg-neon-green text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-colors mt-8">
-            Learn More
-          </a>
-        </div>
-
       </div>
     </div>
   </section>
