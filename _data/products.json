@@ -20,8 +20,10 @@
       { "version": "3.4.1", "name": "Stable Firmware v3.4.1", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/the_centre_v4.fwx" }
     ],
     "user_manuals": [
-      { "country_code": "gb", "name":"User Manual EN", "url": "/downloads/the_centre_manual_en.pdf" },
-      { "country_code": "jp", "name":"User Manual JP", "url": "/downloads/the_centre_manual_de.pdf" }
+      { "country_code": "gb", "name":"User Manual EN", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/users-manual_EN.pdf" },
+      { "country_code": "jp", "name":"User Manual JP", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/users-manual_JP.pdf" },
+      { "country_code": "gb", "name":"Reference Cards EN", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/reference-cards_EN.pdf" },
+      { "country_code": "jp", "name":"Reference Cards JP", "url": "https://github.com/1V-Oct/3318_the_centre_releases/releases/download/v3.4.1/reference-cards_JP.pdf" }
     ],
     "key_features": [
       {
