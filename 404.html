@@ -1,26 +1,29 @@
 ---
+layout: default
+title: Page Not Found
 permalink: /404.html
+noindex: true
+sitemap: false
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Page Not Found - Redirecting</title>
-  
-  <!-- This meta tag provides an immediate client-side redirect to the homepage. It must be in the <head>. -->
-  <meta http-equiv="refresh" content="0; url=/" />
-  
-  <!-- A script for fallback redirection for browsers that might not handle the meta refresh tag. -->
-  <script>
-    window.location.href = "/";
-  </script>
-</head>
-<body>
-  <!-- A message for users in case the redirect fails. -->
-  <div style="text-align: center; padding: 50px; font-family: sans-serif;">
-    <h1>Page not found.</h1>
-    <p>Redirecting you to the homepage...</p>
-    <p>If you are not redirected automatically, <a href="/">click here</a>.</p>
-  </div>
-</body>
-</html>
+<section class="error-404">
+  <div class="bg-off-black">
+    <div class="container mx-auto px-6 py-20 md:py-24 text-center text-white">
+      <div class="mb-8 flex justify-center">
+        <!-- You can replace this with an actual SVG or image for a 404 icon -->
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+          <line x1="8" y1="8" x2="16" y2="16" stroke="currentColor" stroke-width="2" />
+          <line x1="16" y1="8" x2="8" y2="16" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </div>
+
+
+
+      <h1>404 - Page Not Found</h1>
+      <p>Sorry, the page you are looking for does not exist.</p>
+
+      <a href="/" class="inline-block bg-neon-green text-blck font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-colors mt-8">
+        Go to Home Page
+      </a>
+
+</section>
